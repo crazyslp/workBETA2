@@ -1,0 +1,21 @@
+@mixin wh($wid: auto, $heig: auto) {
+   width: $wid;
+   height: $heig;
+}
+
+@mixin flex($fldr: row, $jcc: normal, $aic: stretch, $gap: normal) {
+   display: flex;
+   flex-direction: $fldr;
+   justify-content: $jcc;
+   align-items: $aic;
+   gap: $gap;
+}
+
+@mixin grid($frc: 1fr, $frr: 1fr, $gap: normal, $jcc: normal, $aic: stretch) {
+   display: grid;
+   grid-template-columns: $frc;
+   grid-template-rows: $frr;
+   gap: $gap;
+   justify-content: $jcc;
+   align-items: $aic;
+}
