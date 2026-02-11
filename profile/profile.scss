@@ -63,42 +63,156 @@
         right: 1px;
       }
     }
-  }
-  .prolfile_block_top_con {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    height: 100%;
-
-    .name {
-      font-size: 30px;
-      font-weight: 600;
-    }
-    .otziv_con {
+    .prolfile_block_top_con {
       display: flex;
+      flex-direction: column;
+      gap: 5px;
+      height: 100%;
+
+      .name {
+        font-size: 30px;
+        font-weight: 600;
+      }
+      .otziv_con {
+        width: 50%;
+        display: flex;
+        &:hover .material-symbols-outlined {
+          box-shadow: 0 0 5px yellow;
+        }
+        span {
+          background-color: yellow;
+          margin-left: 2px;
+          padding: 3px;
+          border-radius: 50%;
+          font-size: 15px;
+          color: black;
+          font-weight: 600;
+        }
+        .no_star {
+          opacity: 0.05;
+        }
+        .number_otziv {
+          font-size: 18px;
+          color: yellow;
+          background-color: rgba(117, 61, 238, 0);
+          padding: 0;
+          font-weight: 600;
+        }
+        .kolvo_otziv {
+          font-size: 15px;
+          color: white;
+          background-color: rgba(117, 61, 238, 0);
+          padding: 0;
+          font-weight: 400;
+          opacity: 0.8;
+          text-align: center;
+        }
+      }
+      .button_con {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        button {
+          padding: 10px 30px;
+          border-radius: 20px;
+          color: rgb(135, 93, 193);
+          border: 1px solid #321658ff;
+          font-size: 18px;
+          background: linear-gradient(
+            90deg,
+            #321658ff,
+            rgba(49, 22, 88, 0.244)
+          );
+        }
+        .id:hover {
+          border: 1px solid rgb(120, 69, 190);
+          color: rgb(168, 129, 223);
+          background: linear-gradient(
+            90deg,
+            rgb(70, 33, 122),
+            rgba(49, 22, 88, 0.528)
+          );
+        }
+
+        .tg {
+          color: rgb(50, 136, 202);
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          border: 1px solid #0d2c44ff;
+          background: linear-gradient(90deg, #0d2c44ff, rgba(13, 44, 68, 0.2));
+          &:hover {
+            border: 1px solid rgb(64, 134, 187);
+            background: rgb(10, 35, 54);
+            transform: scale(1.02);
+            padding: 10px 40px;
+          }
+          span {
+            color: rgb(50, 136, 202);
+          }
+        }
+      }
+    }
+    .prolfile_block_top_red {
+      padding: 10px 20px;
+      border-radius: 20px;
+      margin-bottom: auto;
+      margin-left: auto;
+      font-size: 15px;
+      background-color: rgba(0, 0, 0, 0.248);
+      border: 1px solid rgba(0, 0, 0, 0);
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.608);
+        transform: scale(1.05);
+        padding: 10px 40px;
+        border: 1px solid rgba(0, 0, 0, 0.226);
+      }
+    }
+  }
+  .profile_block_bot {
+    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+    margin-top: 20px;
+
+    .block_bot_items {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      border-radius: 20px;
+      padding: 20px;
+      border: 1px solid rgb(122, 122, 122);
+      background: linear-gradient(90deg, #262626ff, #3c3c3cff);
+
+      &:hover {
+        transform: scale(1.01);
+        border: 1px solid #5922e0;
+        background: linear-gradient(90deg, #262626ff, #352e44ff);
+      }
+      &:hover h1 {
+        color: #5922e0;
+      }
       span {
-        background-color: rgba(0, 0, 0, 0.56);
-        padding: 5px;
+        font-size: 35px;
+        font-weight: 700;
+        padding: 10px;
         border-radius: 50%;
-        font-size: 17px;
-        color: yellow;
+        background-color: rgba(0, 0, 0, 0.404);
+        color: #5922e0;
+      }
+      h1 {
+        font-size: 20px;
         font-weight: 600;
       }
-      span:nth-child(6) {
-        font-size: 18px;
-        color: yellow;
-        background-color: rgba(117, 61, 238, 0);
-        padding: 0;
-        font-weight: 600;
-      }
-      span:nth-child(7) {
+      p {
         font-size: 15px;
-        color: white;
-        background-color: rgba(117, 61, 238, 0);
-        padding: 0;
-        font-weight: 400;
-        opacity: 0.8;
-        text-align: center;
+        color: rgba(255, 255, 255, 0.469);
       }
     }
   }
