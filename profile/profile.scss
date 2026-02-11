@@ -1,8 +1,8 @@
-@import url(../scss/_perehod.scss);
+@import "../scss/_perehod.scss";
 
 .header_balance {
-  border: 0.8px solid rgba(142, 142, 142, 1);
-  border-radius: 15px;
+  border: 1px solid rgba(142, 142, 142, 0.79);
+  border-radius: 20px;
   background: linear-gradient(
     270deg,
     rgba(38, 38, 38, 1),
@@ -12,9 +12,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   padding: 10px;
   cursor: pointer;
+
+  .balance_number {
+    font-weight: 600;
+    font-size: 17px;
+  }
+
   &:hover {
     background: linear-gradient(
       270deg,
@@ -52,11 +58,11 @@
       border-radius: 50%;
       position: relative;
 
-      &::after {
+      .online::after {
         content: "";
         position: absolute;
-        background: linear-gradient(#5b1ef8ff, #743deeff);
-        padding: 15px;
+        background: rgb(55, 184, 94);
+        padding: 12px;
         border: 5px solid rgb(40, 40, 40);
         border-radius: 50%;
         bottom: 1px;
@@ -70,30 +76,30 @@
       height: 100%;
 
       .name {
-        font-size: 30px;
-        font-weight: 600;
+        font-size: 25px;
+        font-weight: 700;
       }
       .otziv_con {
-        width: 50%;
         display: flex;
         &:hover .material-symbols-outlined {
-          box-shadow: 0 0 5px yellow;
+          box-shadow: 0 0 5px rgba(255, 255, 0, 0.239);
         }
         span {
-          background-color: yellow;
+          background-color: rgb(255, 187, 0);
+          margin-top: 5px;
           margin-left: 2px;
           padding: 3px;
           border-radius: 50%;
           font-size: 15px;
           color: black;
-          font-weight: 600;
+          font-weight: 500;
         }
         .no_star {
-          opacity: 0.05;
+          opacity: 0.07;
         }
         .number_otziv {
           font-size: 18px;
-          color: yellow;
+          color: rgb(255, 187, 0);
           background-color: rgba(117, 61, 238, 0);
           padding: 0;
           font-weight: 600;
@@ -108,66 +114,64 @@
           text-align: center;
         }
       }
-      .button_con {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-
-        button {
-          padding: 10px 30px;
-          border-radius: 20px;
-          color: rgb(135, 93, 193);
-          border: 1px solid #321658ff;
-          font-size: 18px;
-          background: linear-gradient(
-            90deg,
-            #321658ff,
-            rgba(49, 22, 88, 0.244)
-          );
-        }
-        .id:hover {
-          border: 1px solid rgb(120, 69, 190);
-          color: rgb(168, 129, 223);
-          background: linear-gradient(
-            90deg,
-            rgb(70, 33, 122),
-            rgba(49, 22, 88, 0.528)
-          );
-        }
-
-        .tg {
-          color: rgb(50, 136, 202);
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          border: 1px solid #0d2c44ff;
-          background: linear-gradient(90deg, #0d2c44ff, rgba(13, 44, 68, 0.2));
-          &:hover {
-            border: 1px solid rgb(64, 134, 187);
-            background: rgb(10, 35, 54);
-            transform: scale(1.02);
-            padding: 10px 40px;
-          }
-          span {
-            color: rgb(50, 136, 202);
-          }
-        }
+      .id {
+        width: 55%;
+        margin-top: 10px;
+        padding: 1px 0px;
+        border-radius: 20px;
+        color: rgb(123, 72, 195);
+        border: 1px solid rgb(75, 40, 125);
+        font-size: 15px;
+        font-weight: 600;
+        background: linear-gradient(90deg, #321658ff, rgba(49, 22, 88, 0.244));
+        cursor: default;
       }
     }
-    .prolfile_block_top_red {
-      padding: 10px 20px;
-      border-radius: 20px;
-      margin-bottom: auto;
+    .reg_tg_con {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
       margin-left: auto;
-      font-size: 15px;
-      background-color: rgba(0, 0, 0, 0.248);
-      border: 1px solid rgba(0, 0, 0, 0);
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.608);
-        transform: scale(1.05);
+      margin-bottom: auto;
+      .prolfile_block_top_red {
+        padding: 10px 0;
+        width: 70%;
+        margin-left: auto;
+        border-radius: 20px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #c9c9c9;
+        background-color: rgba(0, 0, 0, 0.248);
+        border: 1px solid rgba(0, 0, 0, 0);
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.481);
+          transform: scale(1);
+          padding: 5px 10px;
+          border: 1px solid rgb(60, 60, 60);
+        }
+      }
+      .tg {
         padding: 10px 40px;
-        border: 1px solid rgba(0, 0, 0, 0.226);
+        cursor: pointer;
+        color: rgb(50, 136, 202);
+        font-size: 15px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        border: 1px solid rgba(33, 89, 131, 0.838);
+        background: linear-gradient(90deg, #0d2c44ff, rgba(13, 44, 68, 0.2));
+        border-radius: 20px;
+        &:hover {
+          border: 1px solid rgba(62, 149, 215, 0.726);
+          background: rgb(10, 35, 54);
+          transform: scale(1.02);
+          padding: 10px 40px;
+        }
+        span {
+          font-size: 17px;
+          color: rgb(50, 136, 202);
+        }
       }
     }
   }
@@ -192,19 +196,19 @@
 
       &:hover {
         transform: scale(1.01);
-        border: 1px solid #5922e0;
+        border: 1px solid rgb(135, 36, 255);
         background: linear-gradient(90deg, #262626ff, #352e44ff);
       }
       &:hover h1 {
         color: #5922e0;
       }
       span {
-        font-size: 35px;
-        font-weight: 700;
+        font-size: 40px;
+        font-weight: 500;
         padding: 10px;
         border-radius: 50%;
-        background-color: rgba(0, 0, 0, 0.404);
-        color: #5922e0;
+        background-color: rgba(0, 0, 0, 0.126);
+        color: rgb(111, 15, 255);
       }
       h1 {
         font-size: 20px;
@@ -213,6 +217,210 @@
       p {
         font-size: 15px;
         color: rgba(255, 255, 255, 0.469);
+      }
+    }
+  }
+}
+
+.block_items {
+  width: 98%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+
+  .item_bl {
+    padding: 10px 20px;
+    border-radius: 15px;
+    font-weight: 600;
+    background: rgb(40, 40, 40);
+
+    @media (max-width: 800px) {
+      font-size: 15px;
+    }
+    &:hover {
+      background: #5922e0;
+      color: black;
+      box-shadow: 0 0 10px #5922e0;
+    }
+  }
+}
+
+// сами офферы
+.offer_con {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 98%;
+  gap: 20px;
+
+  @media (max-width: 800px) {
+    gap: 5px;
+  }
+}
+.offer {
+  @include wh(100%, auto);
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  background: rgba(38, 38, 38, 1);
+  background: rgba(52, 52, 52, 1);
+  border: 1px solid #6600ff00;
+  cursor: pointer;
+
+  @media (max-width: 800px) {
+    padding: 10px;
+  }
+  @media (max-width: 500px) {
+    padding: 5px;
+  }
+
+  &:hover {
+    border: 1px solid #6600ff;
+    transform: scale(1.01);
+  }
+
+  &_top {
+    @include flex(row, space-between);
+
+    &_block {
+      padding: 10px 20px;
+      font-size: 15px;
+      border-radius: 15px;
+      background: linear-gradient(
+        270deg,
+        rgba(71, 164, 80, 1),
+        rgba(48, 114, 79, 1) 100%
+      );
+      font-weight: 700;
+
+      @media (max-width: 800px) {
+        font-size: 8px;
+        padding: 5px;
+        height: 20px;
+      }
+    }
+    .offtb {
+      @include flex(row, center, center);
+      @include wh(auto, 25px);
+      font-weight: 600;
+      padding: 12px;
+      font-size: 10px;
+      margin-right: auto;
+      margin-left: 10px;
+      box-sizing: border-box;
+      border: 0.7px solid rgba(126, 32, 255, 0.85);
+      border-radius: 20px;
+      background: rgba(84, 9, 184, 0.2);
+      color: rgb(132, 60, 233);
+
+      @media (max-width: 800px) {
+        padding: 5px;
+        font-size: 8px;
+        height: 20px;
+      }
+    }
+    .offtbb {
+      font-weight: 700;
+      padding: 10px;
+      border-radius: 20px;
+      background: linear-gradient(
+        270deg,
+        rgba(100, 7, 226, 1) 0.422%,
+        rgba(135, 69, 252, 1) 100%
+      );
+      font-size: 15px;
+
+      @media (max-width: 800px) {
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  &_h1 {
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    @media (max-width: 800px) {
+      font-size: 15px;
+    }
+    @media (max-width: 500px) {
+      font-size: 10px;
+    }
+  }
+
+  &_p {
+    margin-top: 8px;
+    opacity: 0.6;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+
+    @media (max-width: 800px) {
+      font-size: 10px;
+    }
+    @media (max-width: 500px) {
+      font-size: 8px;
+    }
+  }
+
+  &_profile {
+    @include flex();
+    width: 180px;
+    padding: 10px;
+    border-radius: 20px;
+    background: rgba(102, 102, 102, 0.2);
+    margin-top: 10px;
+
+    @media (max-width: 800px) {
+      width: 80%;
+    }
+
+    @media (max-width: 800px) {
+      padding: 5px;
+    }
+    @media (max-width: 500px) {
+      padding: 3px;
+    }
+
+    &_avatar {
+      @include wh(50px, 50px);
+      border-radius: 50%;
+      @media (max-width: 800px) {
+        @include wh(40px, 40px);
+      }
+      @media (max-width: 500px) {
+        @include wh(30px, 30px);
+      }
+    }
+
+    &_con {
+      margin-left: 10px;
+
+      &_nickname {
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 5px;
+        @media (max-width: 800px) {
+          font-size: 10px;
+        }
+        @media (max-width: 500px) {
+          font-size: 8px;
+        }
+      }
+      &_otziv {
+        font-size: 12px;
+        opacity: 0.8;
+        margin-top: 4px;
+        font-weight: 600;
+
+        @media (max-width: 800px) {
+          font-size: 8px;
+        }
+        @media (max-width: 500px) {
+          font-size: 5px;
+        }
       }
     }
   }

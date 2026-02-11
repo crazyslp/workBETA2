@@ -21,6 +21,10 @@
   align-items: start;
   margin-bottom: 10px;
   cursor: default;
+
+  @media (max-width: 960px) {
+    padding: 5px 5px;
+  }
 }
 
 // номерация у блоков
@@ -45,9 +49,10 @@
       rgba(116, 60, 241, 1) 91.776%
     );
   }
+
   h1 {
-    font-weight: 700;
-    font-size: 22px;
+    // font-weight: 700;
+    // font-size: 22px;
   }
 }
 
@@ -57,10 +62,19 @@
   gap: 20px;
   height: 300px;
 
+  @media (max-width: 960px) {
+    gap: 10px;
+    height: auto;
+  }
+
   &_top {
     display: flex;
     gap: 20px;
     align-items: center;
+
+    @media (max-width: 960px) {
+      gap: 10px;
+    }
 
     p {
       display: flex;
@@ -81,6 +95,10 @@
     h1 {
       font-weight: 700;
       font-size: 22px;
+
+      @media (max-width: 960px) {
+        font-size: 15px;
+      }
     }
   }
 
@@ -90,6 +108,14 @@
     width: 100%;
     height: 100%;
     gap: 20px;
+
+    @media (max-width: 960px) {
+      gap: 10px;
+    }
+    @media (max-width: 960px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
   }
 
   &_items,
@@ -108,6 +134,11 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+
+    @media (max-width: 960px) {
+      gap: 10px;
+      padding: 10px;
+    }
 
     &:hover {
       transform: scale(1.03);
@@ -170,6 +201,13 @@
     grid-template-rows: 1fr;
     gap: 20px;
 
+    @media (max-width: 960px) {
+      height: 80px;
+    }
+    @media (max-width: 500px) {
+      height: 50px;
+    }
+
     .offer_category_items {
       border-radius: 15px;
       background: linear-gradient(
@@ -180,6 +218,10 @@
       );
       border: 0.7px solid rgb(109, 109, 109);
       cursor: pointer;
+
+      @media (max-width: 500px) {
+        border-radius: 10px;
+      }
 
       &:hover {
         transform: scale(1.05);
@@ -221,6 +263,11 @@
       border: 0.5px solid rgb(109, 109, 109);
       padding: 20px;
       margin-top: 5px;
+
+      @media (max-width: 960px) {
+        padding: 10px;
+        font-size: 15px;
+      }
     }
   }
 }
@@ -296,6 +343,10 @@
     font-size: 15px;
     opacity: 0.8;
     font-weight: 500;
+
+    @media (max-width: 960px) {
+      font-size: 10px;
+    }
   }
 }
 

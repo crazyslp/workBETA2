@@ -256,6 +256,8 @@ body {
 @media (max-width: 600px) {
   .market_con1 .market_con1_con_butt_button {
     gap: 10px;
+    width: 100%;
+    margin-top: -10px;
   }
 }
 .market_con1 .market_con1_con_butt_button .material-symbols-outlined {
@@ -288,6 +290,11 @@ body {
 .market_con1_con2_h1 {
   cursor: default;
 }
+@media (max-width: 600px) {
+  .market_con1_con2_h1 {
+    font-size: 15px;
+  }
+}
 .market_con1_con2 .sort1,
 .market_con1_con2 .sort2 {
   display: flex;
@@ -308,8 +315,8 @@ body {
 }
 @media (max-width: 500px) {
   .market_con1_con2 .sort_btn {
-    font-size: 15px;
-    padding: 10px;
+    font-size: 12px;
+    padding: 5px 10px 0px 10px;
   }
 }
 .market_con1_con2 .sort {
@@ -448,8 +455,8 @@ body {
 }
 @media (max-width: 500px) {
   .market_grid {
-    gap: 30px;
-    margin-top: 10px;
+    gap: 10px;
+    margin-top: 0px;
   }
 }
 .market_grid .market_offer {

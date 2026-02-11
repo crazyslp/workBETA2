@@ -360,75 +360,118 @@ applyFiltersAndSort();
 
 // ================= МОДАЛКА =================
 
+// 1. Создаем словарь для перевода (вне слушателя)
+const categoryTranslations = {
+  beats: "Биты",
+  mix: "Сведение",
+  covers: "Обложки",
+  other: "Прочее",
+};
+
 const modal = document.querySelector(".modal_offer_con");
 
 document.addEventListener("click", (e) => {
   const card = e.target.closest(".market_offer");
   if (!card || !modal) return;
 
-  hydrateOfferData(card); // берём данные из карточки
+  hydrateOfferData(card);
 
   modal.style.display = "flex";
 
-  modal.querySelector(".modal_offer_top_znak").textContent =
-    card.dataset.type === "buy" ? "Покупаю" : "Продаю";
+  // Исправляем статус (Продаю/Покупаю) и его цвет
+  const znakEl = modal.querySelector(".modal_offer_top_znak");
+  const isBuy = card.dataset.type === "buy";
 
+  znakEl.textContent = isBuy ? "Покупаю" : "Продаю";
+
+  // Динамически меняем класс для смены цвета (из твоего CSS)
+  if (isBuy) {
+    znakEl.classList.add("modal_offer_top_znak_buy");
+  } else {
+    znakEl.classList.remove("modal_offer_top_znak_buy");
+  }
+
+  // Перевод категории на русский
+  const techCat = card.dataset.category; // получаем 'beats', 'mix' и т.д.
   modal.querySelector(".modal_offer_top_category").textContent =
-    card.dataset.category;
+    categoryTranslations[techCat] || "Прочее";
 
+  // Остальные данные
   modal.querySelector(".modal_offer_top_price").textContent =
     card.dataset.price + "р";
-
   modal.querySelector(".modal_offer_h1").textContent = card.dataset.title;
-
   modal.querySelector(".modal_offer_p p").textContent = card.dataset.desc;
 });
 
-const modalOfferCon = document.querySelector(".modal_offer_con");
-
-modalOfferCon.addEventListener("click", () => {
-  modalOfferCon.style.display = "none";
+// ИСПРАВЛЕНИЕ ЗАКРЫТИЯ: закрываем только если кликнули по ФОНУ (modal_offer_con)
+modal.addEventListener("click", (e) => {
+  // e.target — это то, на что реально нажали.
+  // Если нажали на темный фон (modal), а не на белую карточку (modal_offer) — закрываем.
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
 });
 
-// лайк активация - РАБОТАЕТ СО ВСЕМИ ЛАЙКАМИ НА СТРАНИЦЕ
 document.addEventListener("DOMContentLoaded", function () {
-  // Находим ВСЕ лайки на странице
   const allLikeButtons = document.querySelectorAll(".like_js");
 
-  // Для КАЖДОГО лайка добавляем обработчик
+  // 1. ЗАГРУЗКА: При открытии страницы проверяем, что лайкнул юзер
+  allLikeButtons.forEach((likeButton) => {
+    const card = likeButton.closest(".market_offer");
+    const offerTitle = card
+      ?.querySelector(".offer_center_h1")
+      ?.textContent.trim();
+
+    // Если этот заголовок есть в памяти — красим лайк
+    if (offerTitle && localStorage.getItem("like_" + offerTitle) === "true") {
+      const spanIcon = likeButton.querySelector(".like_js_ico");
+      likeButton.classList.add("like_color");
+      spanIcon?.classList.add("like_color_ico");
+
+      // Прибавляем 1 к счетчику, так как в HTML по умолчанию 0
+      let count = parseInt(likeButton.textContent.match(/\d+/)?.[0]) || 0;
+      updateLikeUI(likeButton, count + 1);
+    }
+  });
+
+  // 2. КЛИК: Сохраняем или удаляем лайк
   allLikeButtons.forEach(function (likeButton) {
     likeButton.addEventListener("click", function (e) {
-      e.stopPropagation(); // Останавливаем всплытие
+      e.stopPropagation();
 
-      // Находим СПАН внутри именно этого лайка
+      const card = this.closest(".market_offer");
+      const offerTitle = card
+        ?.querySelector(".offer_center_h1")
+        ?.textContent.trim();
       const spanIcon = this.querySelector(".like_js_ico");
 
-      // 🔴 ПЕРЕКЛЮЧАЕМ КЛАССЫ:
-      // 1. Для самого блока лайка
       this.classList.toggle("like_color");
-      // 2. Для СПАНА (иконки)
       spanIcon.classList.toggle("like_color_ico");
 
-      // Обновляем счетчик (опционально)
       let currentCount = parseInt(this.textContent.match(/\d+/)?.[0]) || 0;
 
-      if (spanIcon.classList.contains("like_color_ico")) {
+      if (this.classList.contains("like_color")) {
         currentCount++;
+        if (offerTitle) localStorage.setItem("like_" + offerTitle, "true");
       } else {
         currentCount--;
+        if (offerTitle) localStorage.removeItem("like_" + offerTitle);
       }
 
-      // Обновляем только число, оставляя спан как есть
-      const spanText =
-        this.innerHTML.match(/<span[^>]*>.*?<\/span>/)?.[0] ||
-        '<span class="material-symbols-outlined like_js_ico">favorite</span>';
-      this.innerHTML = spanText + " " + currentCount;
-
-      // Восстанавливаем класс для нового спана
-      const newSpan = this.querySelector(".like_js_ico");
-      if (this.classList.contains("like_color")) {
-        newSpan.classList.add("like_color_ico");
-      }
+      updateLikeUI(this, currentCount);
     });
   });
+
+  // Вспомогательная функция, чтобы не дублировать твой innerHTML
+  function updateLikeUI(btn, count) {
+    const spanText =
+      btn.innerHTML.match(/<span[^>]*>.*?<\/span>/)?.[0] ||
+      '<span class="material-symbols-outlined like_js_ico">favorite</span>';
+    btn.innerHTML = spanText + " " + count;
+
+    // Возвращаем класс иконке, если лайк активен
+    if (btn.classList.contains("like_color")) {
+      btn.querySelector(".like_js_ico").classList.add("like_color_ico");
+    }
+  }
 });

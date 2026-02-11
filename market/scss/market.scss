@@ -220,6 +220,8 @@ body {
 
       @media (max-width: 600px) {
         gap: 10px;
+        width: 100%;
+        margin-top: -10px;
       }
 
       .material-symbols-outlined {
@@ -252,6 +254,10 @@ body {
 
     &_h1 {
       cursor: default;
+
+      @media (max-width: 600px) {
+        font-size: 15px;
+      }
     }
 
     .sort1,
@@ -272,8 +278,8 @@ body {
       font-size: 15px;
 
       @media (max-width: 500px) {
-        font-size: 15px;
-        padding: 10px;
+        font-size: 12px;
+        padding: 5px 10px 0px 10px;
       }
     }
 
@@ -408,8 +414,8 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
   @media (max-width: 500px) {
-    gap: 30px;
-    margin-top: 10px;
+    gap: 10px;
+    margin-top: 0px;
   }
 
   .market_offer {
@@ -599,16 +605,17 @@ body {
   }
 }
 
-.offer-highlight { // Поиск (выделение)
+.offer-highlight {
+  // Поиск (выделение)
   position: relative;
   background-color: rgba(118, 21, 255, 0.299);
   color: #ffffffe9;
   padding: 2px 4px;
   border-radius: 5px;
   font-weight: 700;
-  
+
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -626,11 +633,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  
+
   display: none;
   justify-content: center;
   align-items: center;
-  
+
   background-color: rgba(0, 0, 0, 0.804);
   backdrop-filter: blur(3px);
   z-index: 100;
@@ -638,7 +645,7 @@ body {
   @media (max-width: 1000px) {
     height: 100%;
   }
-  
+
   .modal_offer {
     margin-top: 0;
     padding: 20px;
@@ -656,7 +663,7 @@ body {
     @media (max-width: 1000px) {
       padding: 10px;
     }
-    
+
     // прокрутка внутри модалки если контент не помещается
     overflow-y: auto;
     max-height: 85vh;
@@ -907,79 +914,80 @@ body {
     }
   }
   .modal_offer__button {
-      display: flex;
-      margin-top: 20px;
-      padding: 2%;
-      border: 1px solid rgba(129, 66, 216, 1);
-      border-radius: 20px;
-      box-shadow: 0px 0px 50px 0px rgba(102, 23, 232, 0.6);
-      background: linear-gradient(
-        153.55deg,
-        rgba(123, 31, 250, 0.94) 5.771%,
-        rgba(60, 22, 158, 0.94) 128.701%
-      );
-      font-weight: 700;
-      width: 30%;
-      margin-left: auto;
-      cursor: pointer;
-      
-      // для анимации перелива
-      position: relative;
-      overflow: hidden;
-      
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          rgba(255, 255, 255, 0) 0%,
-          rgba(255, 255, 255, 0.2) 50%,
-          rgba(255, 255, 255, 0) 100%
-        );
-        transform: skewX(-15deg);
-        animation: glass-shine 7s infinite ease-in-out;
-      }
+    display: flex;
+    margin-top: 20px;
+    padding: 2%;
+    border: 1px solid rgba(129, 66, 216, 1);
+    border-radius: 20px;
+    box-shadow: 0px 0px 50px 0px rgba(102, 23, 232, 0.6);
+    background: linear-gradient(
+      153.55deg,
+      rgba(123, 31, 250, 0.94) 5.771%,
+      rgba(60, 22, 158, 0.94) 128.701%
+    );
+    font-weight: 700;
+    width: 30%;
+    margin-left: auto;
+    cursor: pointer;
 
-      &:hover {
-        transform: scale(1.05);
-      }
-      
-      @media (max-width: 1900px) {
-        font-size: 15px;
-        justify-content: center;
-        align-items: center;
-      }
-      @media (max-width: 1600px) {
-        width: 40%;
-        font-size: 17px;
-        justify-content: center;
-        align-items: center;
-      }
-      @media (max-width: 1000px) {
-        width: 60%;
-        font-size: 15px;
-        justify-content: center;
-        align-items: center;
-      }
-      @media (max-width: 600px) {
-        margin-top: 5px;
-        width: 100%;
-        font-size: 15px;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-  }
+    // для анимации перелива
+    position: relative;
+    overflow: hidden;
 
-  @keyframes glass-shine {
-    0% {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
       left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: skewX(-15deg);
+      animation: glass-shine 7s infinite ease-in-out;
     }
-    20%, 100% {
-      left: 150%;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 1900px) {
+      font-size: 15px;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (max-width: 1600px) {
+      width: 40%;
+      font-size: 17px;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (max-width: 1000px) {
+      width: 60%;
+      font-size: 15px;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (max-width: 600px) {
+      margin-top: 5px;
+      width: 100%;
+      font-size: 15px;
+      justify-content: center;
+      align-items: center;
     }
   }
+}
+
+@keyframes glass-shine {
+  0% {
+    left: -100%;
+  }
+  20%,
+  100% {
+    left: 150%;
+  }
+}
