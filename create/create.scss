@@ -1,0 +1,484 @@
+@import "../scss/_perehod.scss";
+
+// база для всез блоков
+.offer_type,
+.offer_category,
+.offer_information,
+.offer_mediafile,
+.offer_screen {
+  &:hover {
+    border: 1px solid rgb(122, 34, 255);
+  }
+  border: 1px solid rgba(150, 60, 150, 0);
+  border-radius: 15px;
+  background: rgba(40, 40, 40, 1);
+  opacity: 0.9;
+  width: 98%;
+  padding: 20px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin-bottom: 10px;
+  cursor: default;
+}
+
+// номерация у блоков
+.offer_type_top {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 50%;
+    background: linear-gradient(
+      170.35deg,
+      rgba(91, 30, 248, 1) 5.345%,
+      rgba(116, 60, 241, 1) 91.776%
+    );
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 22px;
+  }
+}
+
+// первый блок тайп
+.offer_type {
+  margin-top: 110px;
+  gap: 20px;
+  height: 300px;
+
+  &_top {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      height: 40px;
+      width: 40px;
+      font-size: 20px;
+      font-weight: 700;
+      border-radius: 50%;
+      background: linear-gradient(
+        170.35deg,
+        rgba(91, 30, 248, 1) 5.345%,
+        rgba(116, 60, 241, 1) 91.776%
+      );
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 22px;
+    }
+  }
+
+  &_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+  }
+
+  &_items,
+  &_items_search {
+    gap: 20px;
+    border: 0.7px solid rgba(109, 109, 109, 1);
+    border-radius: 15px;
+    background: linear-gradient(
+      144.32deg,
+      rgba(73, 73, 73, 0.868) -19.268%,
+      rgba(50, 50, 50, 0.78) 13.048%,
+      rgba(0, 0, 0, 0.348) 129.738%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.03);
+    }
+    &:hover .material-symbols-outlined {
+      transform: rotate(80deg);
+    }
+
+    &_h1 {
+      font-weight: 700;
+    }
+    &_p {
+      font-size: 15px;
+      font-weight: 500;
+      opacity: 0.7;
+      margin-top: -10px;
+    }
+  }
+
+  &_items,
+  &_items_search {
+    span {
+      font-weight: 800;
+      font-size: 45px;
+      padding: 5px;
+      border-radius: 50%;
+      background-color: rgba(229, 229, 229, 0.098);
+      transform: rotate(-90deg);
+      color: #47a450ff;
+    }
+  }
+
+  &_items_search {
+    span {
+      font-weight: 800;
+      transform: rotate(0deg);
+      color: rgba(144, 80, 232, 1);
+    }
+
+    border: 2.2px solid rgba(144, 80, 232, 1);
+    border-radius: 15px;
+    background: linear-gradient(
+      144.46deg,
+      rgba(56, 39, 80, 0.897) -93.378%,
+      rgba(0, 0, 0, 0.485) 285.163%
+    );
+  }
+}
+
+.offer_category {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  &_grid {
+    padding: 10px;
+    height: 120px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+
+    .offer_category_items {
+      border-radius: 15px;
+      background: linear-gradient(
+        144.32deg,
+        rgba(73, 73, 73, 0.868) -19.268%,
+        rgba(50, 50, 50, 0.78) 13.048%,
+        rgba(0, 0, 0, 0.238) 129.738%
+      );
+      border: 0.7px solid rgb(109, 109, 109);
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+        border: 2.2px solid rgb(144, 80, 232);
+        background: linear-gradient(
+          144.46deg,
+          rgba(56, 39, 80, 0.897) -93.378%,
+          rgba(0, 0, 0, 0.485) 285.163%
+        );
+      }
+    }
+  }
+}
+
+.offer_information {
+  display: flex;
+  flex-direction: column;
+
+  &_con {
+    width: 100%;
+  }
+
+  form {
+    margin-top: 20px;
+    color: rgba(255, 255, 255, 0.486);
+    font-weight: 500;
+    width: 100%;
+
+    input,
+    textarea {
+      width: 100%;
+      border-radius: 20px;
+      background: linear-gradient(
+        144.32deg,
+        rgba(73, 73, 73, 0.868) -19.268%,
+        rgba(50, 50, 50, 0.78) 13.048%,
+        rgba(0, 0, 0, 0.238) 129.738%
+      );
+      border: 0.5px solid rgb(109, 109, 109);
+      padding: 20px;
+      margin-top: 5px;
+    }
+  }
+}
+
+.media_con {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  border: 2.2px solid rgb(144, 80, 232);
+  border-radius: 20px;
+  background: linear-gradient(
+    144.46deg,
+    rgba(56, 39, 80, 0.897) -93.378%,
+    rgba(0, 0, 0, 0.485) 285.163%
+  );
+  margin-top: 20px;
+  width: 100%;
+  cursor: pointer;
+  &:hover {
+    background: linear-gradient(
+      144.46deg,
+      rgba(33, 23, 47, 0.897) -93.378%,
+      rgba(0, 0, 0, 0.485) 285.163%
+    );
+  }
+
+  span {
+    font-size: 40px;
+    font-weight: 700;
+    color: #7e20ffff;
+  }
+  p {
+    font-size: 15px;
+    width: 200px;
+    text-align: center;
+    font-weight: 500;
+    opacity: 0.8;
+  }
+  button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: linear-gradient(160deg, rgb(107, 0, 184), #7e20ffff);
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    span {
+      font-weight: 700;
+      color: white;
+      font-size: 25px;
+    }
+    &:hover {
+      background: linear-gradient(160deg, rgb(69, 1, 118), rgb(85, 13, 185));
+      transform: scale(1.01);
+    }
+  }
+}
+
+.media_p {
+  width: 100%;
+  margin-top: 5px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    cursor: default;
+    font-size: 15px;
+    opacity: 0.8;
+    font-weight: 500;
+  }
+}
+
+// сами офферы
+
+.offer_screen {
+  display: flex;
+  flex-direction: column;
+}
+.con_offers {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.offer {
+  @include wh(100%, auto);
+  width: 60%;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(38, 38, 38, 1);
+  background: rgba(52, 52, 52, 1);
+  border: 1px solid #6600ff00;
+  cursor: pointer;
+
+  @media (max-width: 800px) {
+    padding: 10px;
+  }
+  @media (max-width: 500px) {
+    padding: 5px;
+  }
+
+  &:hover {
+    border: 1px solid #6600ff;
+    transform: scale(1.02);
+  }
+
+  &_top {
+    @include flex(row, space-between);
+
+    &_block {
+      padding: 10px 20px;
+      font-size: 15px;
+      border-radius: 15px;
+      background: linear-gradient(
+        270deg,
+        rgba(71, 164, 80, 1),
+        rgba(48, 114, 79, 1) 100%
+      );
+      font-weight: 700;
+
+      @media (max-width: 800px) {
+        padding: 10px 10px;
+        font-size: 10px;
+      }
+      @media (max-width: 500px) {
+        padding: 8px 8px;
+        font-size: 8px;
+      }
+    }
+    .offtb {
+      @include flex(row, center, center);
+      @include wh(auto, 25px);
+      font-weight: 600;
+      padding: 12px;
+      font-size: 10px;
+      margin-right: auto;
+      margin-left: 10px;
+      box-sizing: border-box;
+      border: 0.7px solid rgba(126, 32, 255, 0.85);
+      border-radius: 15px;
+      background: rgba(84, 9, 184, 0.2);
+      color: rgb(132, 60, 233);
+
+      @media (max-width: 800px) {
+        padding: 10px 10px;
+        font-size: 10px;
+      }
+      @media (max-width: 500px) {
+        padding: 8px 8px;
+        font-size: 8px;
+      }
+    }
+    .offtbb {
+      font-weight: 700;
+      padding: 10px;
+      border-radius: 15px;
+      background: linear-gradient(
+        270deg,
+        rgba(100, 7, 226, 1) 0.422%,
+        rgba(135, 69, 252, 1) 100%
+      );
+      font-size: 15px;
+      @media (max-width: 800px) {
+        padding: 10px 10px;
+        font-size: 10px;
+      }
+      @media (max-width: 500px) {
+        padding: 8px 8px;
+        font-size: 8px;
+      }
+    }
+  }
+  &_h1 {
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    @media (max-width: 800px) {
+      font-size: 15px;
+    }
+    @media (max-width: 500px) {
+      font-size: 10px;
+    }
+  }
+
+  &_p {
+    margin-top: 8px;
+    opacity: 0.6;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+
+    @media (max-width: 800px) {
+      font-size: 10px;
+    }
+    @media (max-width: 500px) {
+      font-size: 8px;
+    }
+  }
+
+  &_profile {
+    @include flex();
+    padding: 10px;
+    border-radius: 20px;
+    background: rgba(102, 102, 102, 0.2);
+    margin-top: 10px;
+
+    @media (max-width: 800px) {
+      padding: 5px;
+    }
+    @media (max-width: 500px) {
+      padding: 3px;
+    }
+
+    &_avatar {
+      @include wh(50px, 50px);
+      border-radius: 50%;
+      @media (max-width: 800px) {
+        @include wh(40px, 40px);
+      }
+      @media (max-width: 500px) {
+        @include wh(30px, 30px);
+      }
+    }
+
+    &_con {
+      margin-left: 10px;
+
+      &_nickname {
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 5px;
+        @media (max-width: 800px) {
+          font-size: 10px;
+        }
+        @media (max-width: 500px) {
+          font-size: 8px;
+        }
+      }
+      &_otziv {
+        font-size: 12px;
+        opacity: 0.8;
+        margin-top: 4px;
+        font-weight: 600;
+
+        @media (max-width: 800px) {
+          font-size: 8px;
+        }
+        @media (max-width: 500px) {
+          font-size: 5px;
+        }
+      }
+    }
+  }
+}

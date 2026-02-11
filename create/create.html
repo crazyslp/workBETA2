@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Создать оффер</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../header/header_css/header.css" />
+    <link rel="stylesheet" href="create.css" />
   </head>
   <body>
     <header class="header">
@@ -24,7 +25,7 @@
           >Главная</a
         >
       </div>
-      <button class="header_profile displayopen">
+      <button class="header_profile displaynone">
         <div class="header_profile_ava"></div>
         <div class="header_profile_conh1">
           <div class="header_profile_conh1_h1">никнейм</div>
@@ -46,7 +47,11 @@
             </div>
           </div>
           <div class="header_profile_block_con2">
-            <a href="" class="header_profile_block_con2_prof">Мой профиль</a>
+            <a
+              href="../profile/profile.html"
+              class="header_profile_block_con2_prof"
+              >Мой профиль</a
+            >
             <a href="" class="header_profile_block_con2_offers">Мои офферы</a>
             <a href="" class="header_profile_block_con2_newoffer"
               >Новый оффер</a
@@ -63,6 +68,123 @@
         <button class="header_register_a_rg modal_vhrg">Регистрация</button>
       </div>
     </header>
+
+    <div class="offer_type">
+      <div class="offer_type_top">
+        <p class="type_offer_top_p">1</p>
+        <h1 class="type_offer_top_h1">Выберите тип оффера</h1>
+      </div>
+      <div class="offer_type_grid">
+        <div class="offer_type_items">
+          <span class="material-symbols-outlined"> shoppingmode </span>
+          <div class="offer_type_items_h1">Предложить услугу</div>
+          <div class="offer_type_items_p">
+            Предлогайте свои музыкальные услуги
+          </div>
+        </div>
+        <div class="offer_type_items_search">
+          <span class="material-symbols-outlined"> Search </span>
+          <div class="offer_type_items_h1">Найти исполнителя</div>
+          <div class="offer_type_items_p">
+            Размещайте заказ и найдите исполнителя
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="offer_category">
+      <div class="offer_type_top">
+        <p class="type_offer_top_p">2</p>
+        <h1 class="type_offer_top_h1">Выберите категорию</h1>
+      </div>
+      <div class="offer_category_grid">
+        <div class="offer_category_items"></div>
+        <div class="offer_category_items"></div>
+        <div class="offer_category_items"></div>
+        <div class="offer_category_items"></div>
+        <div class="offer_category_items"></div>
+        <div class="offer_category_items"></div>
+      </div>
+    </div>
+    <div class="offer_information">
+      <div class="offer_type_top">
+        <p class="type_offer_top_p">3</p>
+        <h1 class="type_offer_top_h1">Заполните информацию</h1>
+      </div>
+      <div class="offer_information_con">
+        <form action="">
+          Заполните название оффера<br />
+          <input type="text" placeholder="Например: продаю качественные биты" />
+        </form>
+
+        <form action="">
+          Подробное описание<br />
+          <textarea placeholder="Опишите детали вашего предложения"></textarea>
+        </form>
+
+        <form action="">
+          Цена (Только в рублях)<br />
+          <input
+            type="text"
+            placeholder="Только цифры в рублях, например: 1000"
+          />
+        </form>
+      </div>
+    </div>
+    <div class="offer_mediafile">
+      <div class="offer_type_top">
+        <p class="type_offer_top_p">4</p>
+        <h1 class="type_offer_top_h1">Медиафайлы (premium)</h1>
+      </div>
+      <div class="media_con" id="drop_zone">
+        <span class="material-symbols-outlined"> cloud_download </span>
+        <p>Перетащите файлы сюда или нажмите для загрузки</p>
+        <button type="button">
+          <span class="material-symbols-outlined"> folder_open </span>Выбрать
+          файл
+        </button>
+        <!-- Скрытый инпут -->
+        <input
+          type="file"
+          id="file_input"
+          style="display: none"
+          multiple
+          accept=".png,.jpg,.jpeg,.gif,.mp3,.wav,.mp4,.mov,.avi,.pdf,.zip,.rar"
+        />
+      </div>
+
+      <div class="media_p">
+        <p>Изображение: PNG JPG GIF</p>
+        <p>Аудио: MP3 WAV</p>
+        <p>Видео: MP4 MOV AVI</p>
+        <p>Другие: PDF ZIP RAR</p>
+      </div>
+    </div>
+    <div class="offer_screen">
+      <div class="offer_type_top">
+        <p class="type_offer_top_p">5</p>
+        <h1 class="type_offer_top_h1">Предпросмотр оффера</h1>
+      </div>
+      <!-- офферы -->
+      <div class="con_offers">
+        <div class="offer">
+          <div class="offer_top">
+            <div class="offer_top_block">Продаю</div>
+            <div class="offer_top_block offtb">Сведение</div>
+            <div class="offer_top_block offtbb">500р</div>
+          </div>
+          <div class="offer_h1">Название оффера</div>
+          <div class="offer_p">Описание оффера...</div>
+          <div class="offer_profile">
+            <img src="/img/1.jpg" alt="" class="offer_profile_avatar" />
+            <div class="offer_profile_con">
+              <div class="offer_profile_con_nickname">Crazysleep</div>
+              <div class="offer_profile_con_otziv">5.0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- модальный блок-окно регистрации -->
     <div class="modal_con">
       <div class="modal_block">
@@ -147,5 +269,6 @@
 
     <script src="../js/auth.js"></script>
     <script src="../header/header_js/header.js"></script>
+    <script src="create.js"></script>
   </body>
 </html>

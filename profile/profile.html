@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Профиль</title>
+    <link rel="stylesheet" href="profile.css" />
+    <link rel="stylesheet" href="../header/header_css/header.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- шапка -->
+    <header class="header">
+      <div class="header_logo"></div>
+      <div class="header_nav">
+        <a href="../market/market.html" class="header_nav_a"> Биржа</a>
+        <a href="../top/top.html" class="header_nav_a">Топ</a>
+        <a href="../create/create.html" class="header_nav_a" id="create_offer"
+          >Создать</a
+        >
+        <a
+          href="../indexx/index.html"
+          class="header_nav_a displaynone"
+          id="glav"
+          >Главная</a
+        >
+      </div>
+      <div class="header_balance">
+        <div class="balance_number">0.00р</div>
+        <div class="balance_ico">+</div>
+      </div>
+    </header>
+
+    <div class="profile_block">
+      <div class="prolfile_block_top">
+        <div class="prolfile_block_top_ava"></div>
+        <div class="prolfile_block_top_con">
+          <h1 class="name">Никнейм</h1>
+          <div class="otziv_con">
+            <div class="star">
+              <span class="material-symbols-outlined"> kid_star </span
+              ><span class="material-symbols-outlined"> kid_star </span
+              ><span class="material-symbols-outlined"> kid_star </span
+              ><span class="material-symbols-outlined"> kid_star </span
+              ><span class="material-symbols-outlined"> kid_star </span>
+              <span>5.0</span>
+              <span>(5)</span>
+            </div>
+          </div>
+          <div class="button_con">
+            <button class="id"></button>
+            <button class="tg"></button>
+          </div>
+        </div>
+      </div>
+      <div class="profile_block_bot"></div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../header/header_js/header.js"></script>
+  </body>
+</html>

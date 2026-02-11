@@ -1,0 +1,92 @@
+@import url(../scss/_perehod.scss);
+.header_balance {
+  border: 0.8px solid rgb(142, 142, 142);
+  border-radius: 15px;
+  background: linear-gradient(270deg, rgb(38, 38, 38), rgb(84, 84, 84) 100%);
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.header_balance:hover {
+  background: linear-gradient(270deg, rgb(38, 38, 38), rgb(47, 46, 46) 100%);
+}
+
+.profile_block {
+  cursor: default;
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgb(40, 40, 40);
+  margin-top: 90px;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile_block .prolfile_block_top {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+.profile_block .prolfile_block_top_ava {
+  background-image: url(../img/1.jpg);
+  width: 130px;
+  height: 130px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  position: relative;
+}
+.profile_block .prolfile_block_top_ava::after {
+  content: "";
+  position: absolute;
+  background: linear-gradient(#5b1ef8, #743dee);
+  padding: 15px;
+  border: 5px solid rgb(40, 40, 40);
+  border-radius: 50%;
+  bottom: 1px;
+  right: 1px;
+}
+.profile_block .prolfile_block_top_con {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 100%;
+}
+.profile_block .prolfile_block_top_con .name {
+  font-size: 30px;
+  font-weight: 600;
+}
+.profile_block .prolfile_block_top_con .otziv_con {
+  display: flex;
+}
+.profile_block .prolfile_block_top_con .otziv_con span {
+  background-color: rgba(0, 0, 0, 0.56);
+  padding: 5px;
+  border-radius: 50%;
+  font-size: 17px;
+  color: yellow;
+  font-weight: 600;
+}
+.profile_block .prolfile_block_top_con .otziv_con span:nth-child(6) {
+  font-size: 18px;
+  color: yellow;
+  background-color: rgba(117, 61, 238, 0);
+  padding: 0;
+  font-weight: 600;
+}
+.profile_block .prolfile_block_top_con .otziv_con span:nth-child(7) {
+  font-size: 15px;
+  color: white;
+  background-color: rgba(117, 61, 238, 0);
+  padding: 0;
+  font-weight: 400;
+  opacity: 0.8;
+  text-align: center;
+}/*# sourceMappingURL=profile.css.map */
