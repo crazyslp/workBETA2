@@ -320,8 +320,8 @@ body {
   }
 }
 .market_con1_con2 .sort {
+  min-width: 200px;
   position: relative;
-  min-width: 300px;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -330,7 +330,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid rgba(141, 141, 141, 0.278);
   border-radius: 20px;
   background: rgba(24, 24, 24, 0.272);
@@ -465,6 +465,9 @@ body {
   padding: 15px;
   border: 1px solid rgba(122, 78, 243, 0);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .market_grid .market_offer:hover {
   transform: scale(1.01);
@@ -527,6 +530,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  margin-bottom: auto;
 }
 .market_grid .market_offer .offer_center_h1 {
   font-size: 28px;
@@ -579,6 +583,9 @@ body {
 }
 .market_grid .market_offer .offer_bot .market_offer_profile .name_flex .market_offer_profile_otziv {
   opacity: 0.7;
+  display: flex;
+  align-items: center;
+  gap: 3px;
   font-size: 13px;
   margin-left: 0px;
   font-weight: 600;
@@ -969,4 +976,9 @@ body {
   20%, 100% {
     left: 150%;
   }
+}
+span.material-symbols-outlined.filled,
+.material-symbols-outlined.filled {
+  font-variation-settings: "FILL" 1 !important;
+  font-size: 13px;
 }/*# sourceMappingURL=market.css.map */

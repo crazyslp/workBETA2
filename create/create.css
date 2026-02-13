@@ -145,7 +145,7 @@ a {
 .offer_type_items, .offer_type_items_search {
   gap: 20px;
   border: 1px solid rgb(109, 109, 109);
-  border-radius: 15px;
+  border-radius: 20px;
   background: linear-gradient(144.32deg, rgba(73, 73, 73, 0.868) -19.268%, rgba(50, 50, 50, 0.78) 13.048%, rgba(0, 0, 0, 0.348) 129.738%);
   display: flex;
   flex-direction: column;
@@ -160,7 +160,7 @@ a {
   }
 }
 .offer_type_items:hover, .offer_type_items_search:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 .offer_type_items:hover .material-symbols-outlined, .offer_type_items_search:hover .material-symbols-outlined {
   transform: rotate(80deg);
@@ -175,10 +175,33 @@ a {
   margin-top: -10px;
 }
 .offer_type .focus {
-  transform: translateY(-10px) scale(1.03);
-  border: 2.2px solid rgb(144, 80, 232);
+  transform: translateY(-5px) scale(1.02);
+  border: 2px solid rgb(144, 80, 232);
   border-radius: 15px;
-  background: linear-gradient(144.46deg, rgba(56, 39, 80, 0.897) -93.378%, rgba(0, 0, 0, 0.485) 285.163%);
+  background: linear-gradient(144.46deg, rgba(56, 39, 80, 0.527) -93.378%, rgba(0, 0, 0, 0.22) 285.163%);
+  position: relative;
+  overflow: hidden;
+  color: rgba(138, 66, 255, 0.1176470588);
+}
+.offer_type .focus::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(143, 80, 232, 0.152), rgba(98, 7, 226, 0.371), rgba(143, 80, 232, 0.196), transparent);
+  background-size: 200% 100%;
+  animation: shinePurple 3s infinite;
+  pointer-events: none;
+}
+@keyframes shinePurple {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 .offer_type_items span, .offer_type_items_search span {
   font-weight: 800;

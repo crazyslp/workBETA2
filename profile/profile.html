@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
   </head>
   <body>
     <!-- шапка -->
@@ -37,26 +41,29 @@
     <!-- Верхний блок профиля -->
     <div class="profile_block">
       <div class="prolfile_block_top">
-        <div class="prolfile_block_top_ava"><span class="online"></span></div>
+        <div id="con_prof">
+          <img src="../img/2.jpg" alt="Avatar" />
+          <span class="online"></span>
+        </div>
         <div class="prolfile_block_top_con">
-          <h1 class="name">Никнейм</h1>
+          <h1 class="name">admin</h1>
           <div class="otziv_con">
             <div class="star">
               <span class="material-symbols-outlined filled"> kid_star </span
               ><span class="material-symbols-outlined filled"> kid_star </span
               ><span class="material-symbols-outlined filled"> kid_star </span
-              ><span class="material-symbols-outlined filled"> kid_star </span
+              ><span class="material-symbols-outlined no_star"> kid_star </span
               ><span class="material-symbols-outlined no_star"> kid_star </span>
-              <span class="number_otziv">4.0</span>
+              <span class="number_otziv">3.0</span>
               <span class="kolvo_otziv">(1)</span>
             </div>
           </div>
           <button class="id">ID 10000</button>
         </div>
         <div class="reg_tg_con">
-          <button class="prolfile_block_top_red">Редактировать</button>
+          <button class="prolfile_block_top_edit">Редактировать</button>
           <button class="tg">
-            <span class="material-symbols-outlined"> chat </span>Мой Telegram
+            <i class="fab fa-telegram"></i> Мой telegram
           </button>
         </div>
       </div>
@@ -85,14 +92,20 @@
 
     <!-- Кнопки мои офферы и тд -->
     <div class="block_items">
-      <button class="item_bl">Мои офферы</button>
-      <button class="item_bl">В избранном</button>
-      <button class="item_bl">Отзывы</button>
-      <button class="item_bl">Ачивки</button>
+      <button class="item_bl">
+        <i class="fa-solid fa-bag-shopping market-icon"></i> Мои офферы
+      </button>
+      <button class="item_bl"><i class="fas fa-heart"></i> В избранном</button>
+      <button class="item_bl">
+        <i class="fas fa-comment-dots review-icon" id="otz"></i> Отзывы
+      </button>
+      <button class="item_bl">
+        <i class="fa-solid fa-award award-icon"></i> Ачивки
+      </button>
     </div>
 
     <!-- офферы -->
-    <div class="offer_con">
+    <div class="offer_con none">
       <div class="offer">
         <div class="offer_top">
           <div class="offer_top_block">Продаю</div>
@@ -143,6 +156,140 @@
       </div>
     </div>
 
+    <!-- лайканые офферы -->
+    <div class="offer_con_like none">
+      <div class="offer_like">
+        <div class="offer_top_like">
+          <div class="offer_top_block_like">Продаю</div>
+          <div class="offer_top_block_like offtb_like">Сведение</div>
+          <div class="offer_top_block_like offtbb_like">500р</div>
+        </div>
+        <div class="offer_h1_like">Название оффера</div>
+        <div class="offer_p_like">Описание оффера...</div>
+        <div class="offer_profile_like">
+          <img src="/img/1.jpg" alt="" class="offer_profile_avatar_like" />
+          <div class="offer_profile_con_like">
+            <div class="offer_profile_con_nickname_like">Crazysleep</div>
+            <div class="offer_profile_con_otziv_like">5.0</div>
+          </div>
+        </div>
+        <div class="market_offer_like like_js">
+          <span class="material-symbols-outlined like_js_ico"> favorite </span>
+          1
+        </div>
+      </div>
+      <div class="offer_like">
+        <div class="offer_top_like">
+          <div class="offer_top_block_like">Продаю</div>
+          <div class="offer_top_block_like offtb_like">Сведение</div>
+          <div class="offer_top_block_like offtbb_like">500р</div>
+        </div>
+        <div class="offer_h1_like">Название оффера</div>
+        <div class="offer_p_like">Описание оффера...</div>
+        <div class="offer_profile_like">
+          <img src="/img/1.jpg" alt="" class="offer_profile_avatar_like" />
+          <div class="offer_profile_con_like">
+            <div class="offer_profile_con_nickname_like">Crazysleep</div>
+            <div class="offer_profile_con_otziv_like">5.0</div>
+          </div>
+        </div>
+        <div class="market_offer_like like_js">
+          <span class="material-symbols-outlined like_js_ico"> favorite </span>
+          1
+        </div>
+      </div>
+      <div class="offer_like">
+        <div class="offer_top_like">
+          <div class="offer_top_block_like">Продаю</div>
+          <div class="offer_top_block_like offtb_like">Сведение</div>
+          <div class="offer_top_block_like offtbb_like">500р</div>
+        </div>
+        <div class="offer_h1_like">Название оффера</div>
+        <div class="offer_p_like">Описание оффера...</div>
+        <div class="offer_profile_like">
+          <img src="/img/1.jpg" alt="" class="offer_profile_avatar_like" />
+          <div class="offer_profile_con_like">
+            <div class="offer_profile_con_nickname_like">Crazysleep</div>
+            <div class="offer_profile_con_otziv_like">5.0</div>
+          </div>
+        </div>
+        <div class="market_offer_like like_js">
+          <span class="material-symbols-outlined like_js_ico"> favorite </span>
+          1
+        </div>
+      </div>
+    </div>
+
+    <!-- отзывы стата-->
+    <div class="otziv_con_bot">
+      <div class="otziv_flex1">
+        <div class="otziv_items">0</div>
+        <!-- Это первый nth-child -->
+        <div class="otziv_items">0</div>
+        <!-- Это второй nth-child -->
+      </div>
+
+      <div class="otziv_flex2">
+        <div class="otziv_items">Всего отзывов</div>
+        <div class="otziv_items">Средний рейтинг</div>
+      </div>
+    </div>
+
+    <!-- сами отзывы -->
+    <div class="otziv_con_block">
+      <div class="otziv_block_items">
+        <div class="otziv_block_items_top">
+          <div id="con_otziv">
+            <div class="otziv_block_items_top_profile">
+              <img src="../img/3.jpeg" alt="" />
+              <div class="otziv_block_items_top_profile_con">
+                <div class="otziv_block_items_top_profile_con_name">
+                  crazysleep
+                </div>
+                <div class="otziv_block_items_top_profile_con_data">
+                  02.02.2026
+                </div>
+              </div>
+            </div>
+            <div class="otziv_block_items_top_stars">
+              <span class="material-symbols-outlined filled"> kid_star </span
+              ><span class="material-symbols-outlined filled"> kid_star </span
+              ><span class="material-symbols-outlined filled"> kid_star </span
+              ><span class="material-symbols-outlined no_star"> kid_star </span
+              ><span class="material-symbols-outlined no_star"> kid_star </span>
+            </div>
+          </div>
+        </div>
+        <div class="otziv_block_items_bot">У тебя айди слишком ахуевший</div>
+      </div>
+      <div class="otziv_block_items">
+        <div class="otziv_block_items_top">
+          <div id="con_otziv">
+            <div class="otziv_block_items_top_profile">
+              <img src="../img/3.jpeg" alt="" />
+              <div class="otziv_block_items_top_profile_con">
+                <div class="otziv_block_items_top_profile_con_name">
+                  crazysleep
+                </div>
+                <div class="otziv_block_items_top_profile_con_data">
+                  02.02.2026
+                </div>
+              </div>
+            </div>
+            <div class="otziv_block_items_top_stars">
+              <span class="material-symbols-outlined filled"> kid_star </span
+              ><span class="material-symbols-outlined filled"> kid_star </span
+              ><span class="material-symbols-outlined filled"> kid_star </span
+              ><span class="material-symbols-outlined no_star"> kid_star </span
+              ><span class="material-symbols-outlined no_star"> kid_star </span>
+            </div>
+          </div>
+        </div>
+        <div class="otziv_block_items_bot">У тебя айди слишком ахуевший</div>
+      </div>
+    </div>
+
+    <script src="profile.js"></script>
     <script src="../js/auth.js"></script>
     <script src="../header/header_js/header.js"></script>
   </body>
