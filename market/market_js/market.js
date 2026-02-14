@@ -365,7 +365,7 @@ const categoryTranslations = {
   beats: "Биты",
   mix: "Сведение",
   covers: "Обложки",
-  other: "Прочее",
+  other: "Другое",
 };
 
 const modal = document.querySelector(".modal_offer_con");

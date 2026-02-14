@@ -518,7 +518,7 @@
       }
     }
     .offtbb,
-    .offrbb_like {
+    .offtbb_like {
       font-weight: 700;
       padding: 10px;
       border-radius: 20px;
@@ -784,4 +784,42 @@
 }
 .like_js_ico {
   transition: 0.2s;
+}
+
+.points_con {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+  width: 98%;
+
+  .point_items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(58, 58, 58);
+    border: 1px solid rgba(114, 114, 114, 0.523);
+    cursor: default;
+    &:hover {
+      border: 1px solid rgba(114, 114, 114, 0.778);
+      background-color: rgb(51, 51, 51);
+    }
+
+    span {
+      color: rgb(236, 105, 105);
+    }
+
+    h1 {
+      font-weight: 600;
+    }
+
+    p {
+      text-align: center;
+      font-size: 15px;
+    }
+  }
 }

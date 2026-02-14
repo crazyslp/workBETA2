@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
   </head>
   <body>
     <!-- шапка -->
@@ -53,17 +57,42 @@
             <a
               href="../profile/profile.html"
               class="header_profile_block_con2_prof"
-              >Мой профиль</a
             >
-            <a href="" class="header_profile_block_con2_offers">Мои офферы</a>
-            <a href="" class="header_profile_block_con2_newoffer"
-              >Новый оффер</a
-            >
-            <a href="" class="header_profile_block_con2_sett">Настройки</a>
+              <i class="fas fa-user"></i> Мой профиль
+            </a>
+            <a href="" class="header_profile_block_con2_offers">
+              <i class="fas fa-tags"></i> Мои офферы
+            </a>
+            <a href="" class="header_profile_block_con2_newoffer">
+              <i class="fas fa-plus-circle"></i> Новый оффер
+            </a>
+            <a href="" class="header_profile_block_con2_sett">
+              <i class="fas fa-cog"></i> Настройки
+            </a>
           </div>
           <a href="" class="header_profile_block_butt">
-            <span class="material-symbols-outlined"> logout </span>Выйти</a
-          >
+            <i class="fas fa-sign-out-alt out"></i> Выйти
+          </a>
+
+          <style>
+            .header_profile_block_con2 a,
+            .header_profile_block_butt,
+            .header_register button {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+
+              i {
+                font-size: 15px;
+                width: 20px;
+                text-align: center;
+                color: rgb(197, 197, 197);
+              }
+              .out {
+                color: rgb(49, 80, 255);
+              }
+            }
+          </style>
         </div>
       </button>
       <div class="header_register displaynone">
@@ -224,7 +253,7 @@
         <div class="offer_top">
           <div class="offer_top_con">
             <div class="offer_top_znak_buy">Покупаю</div>
-            <div class="offer_top_category">Обложка</div>
+            <div class="offer_top_category">Обложки</div>
             <div class="offer_top_price">300р</div>
           </div>
           <div class="offer_top_con2"></div>
@@ -290,7 +319,7 @@
         <div class="offer_top">
           <div class="offer_top_con">
             <div class="offer_top_znak_buy">Покупаю</div>
-            <div class="offer_top_category">Бит</div>
+            <div class="offer_top_category">Биты</div>
             <div class="offer_top_price">1200р</div>
           </div>
           <div class="offer_top_con2"></div>

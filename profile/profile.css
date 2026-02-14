@@ -560,13 +560,13 @@ a {
   }
 }
 .offer_top .offtbb,
-.offer_top .offrbb_like,
+.offer_top .offtbb_like,
 .offer .offer_top_like .offtbb,
-.offer .offer_top_like .offrbb_like,
+.offer .offer_top_like .offtbb_like,
 .offer_like_top .offtbb,
-.offer_like_top .offrbb_like,
+.offer_like_top .offtbb_like,
 .offer_like .offer_top_like .offtbb,
-.offer_like .offer_top_like .offrbb_like {
+.offer_like .offer_top_like .offtbb_like {
   font-weight: 700;
   padding: 10px;
   border-radius: 20px;
@@ -575,13 +575,13 @@ a {
 }
 @media (max-width: 800px) {
   .offer_top .offtbb,
-  .offer_top .offrbb_like,
+  .offer_top .offtbb_like,
   .offer .offer_top_like .offtbb,
-  .offer .offer_top_like .offrbb_like,
+  .offer .offer_top_like .offtbb_like,
   .offer_like_top .offtbb,
-  .offer_like_top .offrbb_like,
+  .offer_like_top .offtbb_like,
   .offer_like .offer_top_like .offtbb,
-  .offer_like .offer_top_like .offrbb_like {
+  .offer_like .offer_top_like .offtbb_like {
     font-size: 10px;
     display: flex;
     align-items: center;
@@ -997,4 +997,38 @@ a {
 
 .like_js_ico {
   transition: 0.2s;
+}
+
+.points_con {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+  width: 98%;
+}
+.points_con .point_items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgb(58, 58, 58);
+  border: 1px solid rgba(114, 114, 114, 0.523);
+  cursor: default;
+}
+.points_con .point_items:hover {
+  border: 1px solid rgba(114, 114, 114, 0.778);
+  background-color: rgb(51, 51, 51);
+}
+.points_con .point_items span {
+  color: rgb(236, 105, 105);
+}
+.points_con .point_items h1 {
+  font-weight: 600;
+}
+.points_con .point_items p {
+  text-align: center;
+  font-size: 15px;
 }/*# sourceMappingURL=profile.css.map */

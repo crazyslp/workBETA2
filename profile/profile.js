@@ -4,6 +4,7 @@ const sections = {
   favorites: document.querySelector(".offer_con_like"),
   reviews: document.querySelector(".otziv_con_block"),
   revStats: document.querySelector(".otziv_con_bot"),
+  achievements: document.querySelector(".points_con"), // Добавили ачивки
 };
 
 function hideAllSections() {
@@ -14,7 +15,7 @@ function hideAllSections() {
 navButtons.forEach((btn, index) => {
   btn.onclick = () => {
     hideAllSections();
-    btn.classList.add("active_nav"); // Кнопка просто станет фиолетовой
+    btn.classList.add("active_nav");
 
     if (index === 0 && sections.myOffers)
       sections.myOffers.classList.remove("none");
@@ -25,10 +26,14 @@ navButtons.forEach((btn, index) => {
       if (sections.revStats) sections.revStats.classList.remove("none");
       updateAllStats();
     }
+    // Логика для 4-й кнопки (Ачивки)
+    if (index === 3 && sections.achievements) {
+      sections.achievements.classList.remove("none");
+    }
   };
 });
 
-// --- Функции лайков и статистики оставляем без изменений ---
+// --- Лайки ---
 document.addEventListener("click", (e) => {
   const likeBtn = e.target.closest(".like_js");
   if (!likeBtn) return;
@@ -47,6 +52,7 @@ document.addEventListener("click", (e) => {
   likeBtn.innerHTML = `<span class="material-symbols-outlined like_js_ico">${icon ? icon.innerText : "favorite"}</span> ${count}`;
 });
 
+// --- Статистика ---
 function updateAllStats() {
   const allReviews = document.querySelectorAll(".otziv_block_items");
   const totalReviews = allReviews.length;
@@ -96,7 +102,6 @@ function updateAllStats() {
 }
 
 document.addEventListener("DOMContentLoaded", updateAllStats);
-// Автоматически "кликаем" по первой кнопке при загрузке
 if (navButtons[0]) {
   navButtons[0].click();
 }
