@@ -861,6 +861,7 @@ body {
   }
   .modal_offer_con_image {
     margin-top: 1%;
+    width: 100%;
     height: 40%;
     display: flex;
     flex-direction: column;
@@ -876,7 +877,7 @@ body {
     }
     .modal_offer_img {
       position: relative;
-      width: 100%;
+      width: 50%;
       height: 100%;
       background-image: url(../../img/2.jpg);
       background-position: 30% 30%;
