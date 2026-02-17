@@ -1,0 +1,169 @@
+@charset "UTF-8";
+.header_balance {
+  border: 1px solid rgba(142, 142, 142, 0.79);
+  border-radius: 15px;
+  background: linear-gradient(270deg, rgb(38, 38, 38), rgb(84, 84, 84) 100%);
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .header_balance {
+    padding: 2px 5px;
+    border-radius: 10px;
+  }
+}
+.header_balance .balance_number {
+  font-weight: 600;
+  font-size: 17px;
+}
+@media (max-width: 700px) {
+  .header_balance .balance_number {
+    font-size: 10px;
+  }
+}
+.header_balance:hover {
+  transform: scale(1.03);
+  background: linear-gradient(270deg, rgb(38, 38, 38), rgb(47, 46, 46) 100%);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+  width: 98%;
+  margin-top: 100px;
+  gap: 20px;
+  cursor: default;
+  /* Полная заливка для иконок google fonts */
+}
+main .filled {
+  font-variation-settings: "FILL" 1 !important;
+  font-size: 20px;
+  color: rgb(232, 232, 232) !important;
+}
+main .main_avatars {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: auto;
+}
+main .main_avatars .img {
+  position: relative;
+}
+main .main_avatars .img:has(span:hover) img {
+  opacity: 0.5;
+  filter: blur(1px);
+}
+main .main_avatars .img img {
+  border-radius: 50%;
+  width: 200px;
+}
+main .main_avatars .img span {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(104, 53, 255);
+  border: 6px solid rgb(24, 24, 24);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+}
+main .main_avatars .img span:hover {
+  transform: scale(1.1);
+}
+main .main_avatars h1 {
+  font-size: 25px;
+  font-weight: 700;
+}
+main .main_avatars p {
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0.5;
+}
+main .main_edit {
+  background: #282828;
+  border-radius: 20px;
+  padding: 20px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+}
+main .main_edit h1 span {
+  font-size: 32px;
+  line-height: 1;
+  color: rgb(157, 71, 242);
+  font-variation-settings: "FILL" 1 !important;
+}
+main .main_edit h1 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 750;
+  font-size: 25px;
+  color: rgb(157, 71, 242);
+  border-bottom: 1px solid rgb(157, 71, 242);
+  padding: 0 0 20px 0;
+}
+main .main_edit form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main .main_edit form div {
+  margin-left: 15px;
+  font-weight: 550;
+}
+main .main_edit form input {
+  padding: 15px;
+  border-radius: 20px;
+  border: 2px solid rgb(74, 74, 74);
+  background: linear-gradient(-90deg, #262626, #3c3c3c);
+}
+main .main_edit form p {
+  font-size: 15px;
+  font-weight: 550;
+  opacity: 0.6;
+  margin-left: 20px;
+}
+main .main_edit #ppp {
+  color: rgb(157, 71, 242);
+  font-weight: 550;
+  font-size: 15px;
+  opacity: 1;
+}
+main .main_edit .button {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+}
+main .main_edit .button button {
+  padding: 10px;
+  border-radius: 15px;
+  background-color: plum;
+}
+main .main_edit .button button:hover {
+  transform: scale(1.05);
+}
+main .main_edit .button #butt {
+  padding: 10px 50px;
+}
+main .main_edit a {
+  text-decoration: underline;
+  font-size: 15px;
+  color: rgb(157, 71, 242);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=edit_profile.css.map */

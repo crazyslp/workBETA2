@@ -1,0 +1,851 @@
+@import "../scss/_perehod.scss";
+
+// шапка
+.header_balance {
+  border: 1px solid rgba(142, 142, 142, 0.79);
+  border-radius: 15px;
+  background: linear-gradient(
+    270deg,
+    rgba(38, 38, 38, 1),
+    rgba(84, 84, 84, 1) 100%
+  );
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  cursor: pointer;
+
+  @media (max-width: 700px) {
+    padding: 2px 5px;
+    border-radius: 10px;
+  }
+  .balance_number {
+    font-weight: 600;
+    font-size: 17px;
+
+    @media (max-width: 700px) {
+      font-size: 10px;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.03);
+    background: linear-gradient(
+      270deg,
+      rgba(38, 38, 38, 1),
+      rgb(47, 46, 46) 100%
+    );
+  }
+}
+
+// ---------------------------------- ЗВЁЗДЫ В ПРОФИЛЕ JS
+// иконки заливка
+/* Настройка для всех иконок Google Fonts */
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+  transition: font-variation-settings 0.3s;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Полная заливка */
+.filled {
+  font-variation-settings: "FILL" 1 !important;
+  color: rgb(255, 187, 0) !important;
+}
+
+/* Половинчатая заливка (именно для kid_star) */
+.half-fill {
+  background: linear-gradient(
+    90deg,
+    rgb(255, 187, 0) 50%,
+    rgba(255, 187, 0, 0.3) 50%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-variation-settings: "FILL" 1 !important; /* Включаем заливку для градиента */
+}
+
+// ----------------------------------
+
+.profile_block {
+  cursor: default;
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgb(40, 40, 40);
+  margin-top: 90px;
+  justify-content: space-between;
+  align-items: center;
+
+  .prolfile_block_top {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+
+    #con_prof {
+      position: relative;
+    }
+
+    img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+
+      &:hover {
+        opacity: 0.8;
+        transform: scale(1.03);
+      }
+
+      @media (max-width: 700px) {
+        width: 80px;
+        height: 80px;
+      }
+      @media (max-width: 400px) {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    .online {
+      position: absolute;
+      background: rgb(55, 184, 94);
+      padding: 12px;
+      border: 5px solid rgb(40, 40, 40);
+      border-radius: 50%;
+      bottom: 1px;
+      right: 1px;
+      z-index: 2;
+
+      @media (max-width: 400px) {
+        padding: 5px;
+      }
+    }
+    .prolfile_block_top_con {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      height: 100%;
+      width: 200px;
+
+      .name {
+        font-size: 25px;
+        font-weight: 700;
+
+        @media (max-width: 700px) {
+          font-size: 15px;
+        }
+      }
+      .otziv_con {
+        display: flex;
+        &:hover .material-symbols-outlined {
+          box-shadow: 0 0 5px rgba(255, 255, 0, 0);
+        }
+        .star {
+          display: flex;
+        }
+        span {
+          margin-top: 5px;
+          padding: 1px;
+          border-radius: 50%;
+          font-size: 20px;
+          color: rgb(255, 187, 0);
+          font-weight: 500;
+
+          @media (max-width: 700px) {
+            font-size: 12px;
+          }
+        }
+        .number_otziv {
+          font-size: 18px;
+          color: rgb(255, 187, 0);
+          padding: 0;
+          font-weight: 600;
+          margin-left: 5px;
+
+          @media (max-width: 700px) {
+            font-size: 12px;
+          }
+        }
+        .kolvo_otziv {
+          margin-left: 5px;
+          font-size: 15px;
+          color: white;
+          background-color: rgba(117, 61, 238, 0);
+          padding: 0;
+          font-weight: 400;
+          opacity: 0.8;
+          text-align: center;
+
+          @media (max-width: 700px) {
+            font-size: 10px;
+          }
+        }
+      }
+      .id {
+        width: 45%;
+        margin-top: 10px;
+        padding: 1px 0px;
+        border-radius: 20px;
+        color: rgb(123, 72, 195);
+        border: 1px solid rgb(75, 40, 125);
+        font-size: 15px;
+        font-weight: 650;
+        background: linear-gradient(90deg, #321658ff, rgba(49, 22, 88, 0.244));
+        cursor: default;
+
+        @media (max-width: 700px) {
+          font-size: 10px;
+        }
+      }
+    }
+
+    .reg_tg_con {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-left: auto;
+      margin-bottom: auto;
+
+      .prolfile_block_top_edit {
+        padding: 10px 0;
+        width: 70%;
+        margin-left: auto;
+        border-radius: 20px;
+        font-size: 15px;
+        font-weight: 600;
+        color: #c9c9c9;
+        background-color: rgba(0, 0, 0, 0.248);
+        border: 1px solid rgba(0, 0, 0, 0);
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(135, 36, 255, 0.3),
+            transparent
+          );
+          background-size: 200% 100%;
+          animation: shine 1.5s infinite;
+          border: 1px solid rgb(135, 36, 255);
+        }
+
+        @keyframes shine {
+          0% {
+            background-position: -100% 0;
+          }
+          100% {
+            background-position: 200% 0;
+          }
+        }
+
+        @media (max-width: 700px) {
+          padding: 5px;
+          font-size: 10px;
+        }
+        @media (max-width: 400px) {
+          width: auto;
+          font-size: 8px;
+        }
+      }
+      .tg {
+        padding: 10px 40px;
+        cursor: pointer;
+        color: rgb(60, 138, 198);
+        font-size: 15px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        border: 1px solid rgba(33, 89, 131, 0.838);
+        background: linear-gradient(90deg, #0d2c44ff, rgba(13, 44, 68, 0.2));
+        border-radius: 20px;
+
+        &:hover {
+          background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(60, 138, 198, 0.3),
+            transparent
+          );
+          background-size: 200% 100%;
+          animation: shineBlue 1.5s infinite;
+          border: 1px solid rgb(60, 138, 198);
+          color: #a8d5ff;
+          transform: scale(1.02);
+        }
+
+        @keyframes shineBlue {
+          0% {
+            background-position: -100% 0;
+          }
+          100% {
+            background-position: 200% 0;
+          }
+        }
+
+        @media (max-width: 700px) {
+          padding: 5px 20px;
+          font-size: 10px;
+        }
+
+        @media (max-width: 400px) {
+          padding: 3px 10px;
+          font-size: 8px;
+        }
+
+        span,
+        i {
+          font-size: 17px;
+          color: rgb(60, 138, 198);
+        }
+      }
+    }
+  }
+  .profile_block_bot {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    width: 75%;
+    margin-top: 20px;
+
+    @media (max-width: 700px) {
+      gap: 10px;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .block_bot_items {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      border-radius: 20px;
+      padding: 20px;
+      border: 1px solid rgb(122, 122, 122);
+      background: linear-gradient(90deg, #262626ff, #3c3c3cff);
+      transition: all 0.5s ease;
+
+      @media (max-width: 700px) {
+        padding: 10px;
+      }
+
+      &:hover {
+        transform: scale(1.01);
+        border: 1px solid rgb(135, 36, 255);
+        background: linear-gradient(90deg, #262626ff, #352e44ff);
+      }
+      &:hover h1 {
+        color: #5922e0;
+        transform: scale(1.03);
+      }
+      span {
+        font-size: 40px;
+        font-weight: 500;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.126);
+        color: rgb(111, 15, 255);
+
+        @media (max-width: 700px) {
+          font-size: 20px;
+        }
+        @media (max-width: 400px) {
+          font-size: 15px;
+        }
+      }
+      h1 {
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+
+        @media (max-width: 700px) {
+          font-size: 15px;
+        }
+        @media (max-width: 400px) {
+          font-size: 10px;
+        }
+      }
+      p {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.469);
+        text-align: center;
+
+        @media (max-width: 700px) {
+          font-size: 10px;
+        }
+        @media (max-width: 400px) {
+          font-size: 7px;
+        }
+      }
+    }
+  }
+}
+
+.block_items {
+  width: 98%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+
+  .item_bl {
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 17px;
+    font-weight: 600;
+    background: rgb(40, 40, 40);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    color: white;
+
+    @media (max-width: 500px) {
+      font-size: 9.5px;
+      padding: 5px;
+    }
+
+    span,
+    i {
+      font-size: 15px;
+      padding: 3px;
+
+      @media (max-width: 500px) {
+        font-size: 8px;
+      }
+    }
+
+    .fa-heart {
+      color: #da2c5a;
+    }
+  }
+
+  /* Эффект только при наведении мыши */
+  button:hover {
+    background: linear-gradient(270deg, #6407e2 0.422%, #8745fc 100%);
+    transform: scale(1.03) rotate(2deg) translateY(-2px); /* Прыжок только тут */
+    box-shadow: 0 0 25px rgba(142, 77, 255, 0.444);
+    color: rgb(35, 35, 35);
+  }
+
+  /* Стиль зафиксированной (нажатой) кнопки — БЕЗ ТРАНСФОРМА */
+  .item_bl.active_nav {
+    background: linear-gradient(
+      270deg,
+      #6407e2 0.422%,
+      #8745fc 100%
+    ) !important;
+    color: rgb(35, 35, 35) !important;
+    font-weight: 700 !important;
+    box-shadow: 0 0 15px rgba(142, 77, 255, 0.3) !important;
+    transform: none !important; /* Отключаем наклон и масштаб */
+  }
+
+  /* Красим иконки внутри активной кнопки в темный */
+  .item_bl.active_nav i,
+  .item_bl.active_nav span,
+  .item_bl.active_nav .market-icon,
+  .item_bl.active_nav .review-icon,
+  .item_bl.active_nav .award-icon {
+    color: rgb(35, 35, 35) !important;
+  }
+}
+
+// сами офферы
+.offer_con,
+.offer_con_like {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 98%;
+  gap: 15px;
+
+  @media (max-width: 700px) {
+    gap: 0px;
+    grid-template-columns: 1fr;
+  }
+}
+.offer,
+.offer_like {
+  position: relative;
+  @include wh(100%, auto);
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 20px;
+  background: rgb(41, 41, 41);
+  border: 1px solid #6600ff00;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  @media (max-width: 700px) {
+    margin-top: 10px;
+  }
+
+  &:hover {
+    border: 1px solid #6600ff;
+    transform: scale(1.01);
+    background: rgb(32, 32, 32);
+    transform: scale(1.03) rotate(1deg) translateY(-1px);
+  }
+
+  &_top,
+  .offer_top_like {
+    @include flex(row, space-between);
+
+    &_block,
+    .offer_top_block_like {
+      padding: 10px 20px;
+      font-size: 15px;
+      border-radius: 15px;
+      background: linear-gradient(
+        270deg,
+        rgba(71, 164, 80, 1),
+        rgba(48, 114, 79, 1) 100%
+      );
+      font-weight: 700;
+
+      @media (max-width: 800px) {
+        font-size: 8px;
+        padding: 5px;
+        height: 20px;
+      }
+    }
+    .offtb,
+    .offtb_like {
+      @include flex(row, center, center);
+      @include wh(auto, 25px);
+      font-weight: 600;
+      padding: 12px;
+      font-size: 10px;
+      margin-right: auto;
+      margin-left: 10px;
+      box-sizing: border-box;
+      border: 0.7px solid rgba(126, 32, 255, 0.85);
+      border-radius: 20px;
+      background: rgba(84, 9, 184, 0.2);
+      color: rgb(132, 60, 233);
+
+      @media (max-width: 800px) {
+        padding: 5px;
+        font-size: 8px;
+        height: 20px;
+      }
+    }
+    .offtbb,
+    .offtbb_like {
+      font-weight: 700;
+      padding: 10px;
+      border-radius: 20px;
+      background: linear-gradient(
+        270deg,
+        rgba(100, 7, 226, 1) 0.422%,
+        rgba(135, 69, 252, 1) 100%
+      );
+      font-size: 15px;
+
+      @media (max-width: 800px) {
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  &_h1,
+  .offer_h1_like {
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 20px;
+    @media (max-width: 800px) {
+      font-size: 15px;
+    }
+    @media (max-width: 500px) {
+      font-size: 10px;
+    }
+  }
+
+  &_p,
+  .offer_p_like {
+    margin-top: 8px;
+    opacity: 0.6;
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+
+    @media (max-width: 800px) {
+      font-size: 10px;
+    }
+    @media (max-width: 500px) {
+      font-size: 8px;
+    }
+  }
+
+  &_profile,
+  .offer_profile_like {
+    @include flex();
+    width: 180px;
+    padding: 10px;
+    border-radius: 20px;
+    background: rgba(79, 79, 79, 0.2);
+    margin-top: 10px;
+
+    @media (max-width: 800px) {
+      width: 80%;
+    }
+
+    @media (max-width: 800px) {
+      padding: 5px;
+    }
+    @media (max-width: 500px) {
+      padding: 3px;
+    }
+
+    &_avatar,
+    .offer_profile_avatar_like {
+      @include wh(50px, 50px);
+      border-radius: 50%;
+      @media (max-width: 800px) {
+        @include wh(40px, 40px);
+      }
+      @media (max-width: 500px) {
+        @include wh(30px, 30px);
+      }
+    }
+
+    &_con,
+    .offer_profile_con_like {
+      margin-left: 10px;
+
+      &_nickname,
+      .offer_profile_con_nickname_like {
+        font-size: 15px;
+        font-weight: 600;
+        margin-top: 5px;
+        @media (max-width: 800px) {
+          font-size: 10px;
+        }
+        @media (max-width: 500px) {
+          font-size: 8px;
+        }
+      }
+      &_otziv,
+      .offer_profile_con_otziv_like {
+        font-size: 12px;
+        opacity: 0.8;
+        margin-top: 4px;
+        font-weight: 600;
+
+        @media (max-width: 800px) {
+          font-size: 8px;
+        }
+        @media (max-width: 500px) {
+          font-size: 5px;
+        }
+      }
+    }
+  }
+}
+
+// дополнение к офферу - вкладка лайков
+.market_offer_like {
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  border: 3px solid rgba(255, 0, 0, 0.566);
+  padding: 5px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  color: rgba(255, 0, 0, 0.566);
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  span {
+    font-weight: 700;
+    font-size: 13px;
+    color: rgba(255, 0, 0, 0.566);
+  }
+}
+
+// Отзывы
+.otziv_con_bot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 98%;
+  border-radius: 20px;
+  background: linear-gradient(-90deg, #4229666d, #4229665f);
+  margin-top: 15px;
+  padding: 10px 0;
+  cursor: default;
+
+  .otziv_flex1,
+  .otziv_flex2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    width: 700px;
+    .otziv_items {
+      font-size: 30px;
+      font-weight: 700;
+      color: rgba(126, 34, 255, 0.864);
+    }
+  }
+  .otziv_flex2 {
+    gap: 50px;
+    .otziv_items {
+      font-size: 15px;
+      font-weight: 500;
+      opacity: 0.7;
+      color: white;
+    }
+  }
+}
+
+.otziv_con_block {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  width: 98%;
+
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+
+  .otziv_block_items {
+    padding: 15px;
+    border-radius: 20px;
+    background-color: #282828c7;
+    border: 1px solid rgba(255, 255, 255, 0);
+    cursor: default;
+
+    &:hover {
+      background-color: #2828289b;
+      border: 1px solid rgba(255, 255, 255, 0.251);
+    }
+    #con_otziv {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      @media (max-width: 700px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    &_top {
+      display: flex;
+      &_profile {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 20px;
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.171);
+        }
+
+        img {
+          border-radius: 50%;
+          width: 70px;
+          height: 70px;
+        }
+        &_con {
+          display: flex;
+          flex-direction: column;
+
+          &_name {
+            font-size: 18px;
+            font-weight: 700;
+          }
+          &_data {
+            font-size: 14px;
+            opacity: 0.8;
+          }
+        }
+      }
+      span {
+        color: rgb(255, 187, 0);
+        font-size: 20px;
+      }
+    }
+    &_bot {
+      margin-top: 10px;
+      background-color: rgba(0, 0, 0, 0.209);
+      padding: 20px;
+      border-radius: 20px;
+      font-size: 15px;
+      opacity: 0.8;
+    }
+  }
+}
+
+// дисплей нан
+.none {
+  display: none !important;
+}
+.like_js {
+  cursor: pointer;
+  user-select: none;
+}
+.like_js_ico {
+  transition: 0.2s;
+}
+
+.points_con {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+  width: 98%;
+
+  .point_items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(58, 58, 58);
+    border: 1px solid rgba(114, 114, 114, 0.523);
+    cursor: default;
+    &:hover {
+      border: 1px solid rgba(114, 114, 114, 0.778);
+      background-color: rgb(51, 51, 51);
+    }
+
+    span {
+      color: rgb(236, 105, 105);
+    }
+
+    h1 {
+      font-weight: 600;
+    }
+
+    p {
+      text-align: center;
+      font-size: 15px;
+    }
+  }
+}

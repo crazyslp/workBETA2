@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../header/header_css/header.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header_logo"></div>
+      <div class="header_nav">
+        <a href="../market/market.html" class="header_nav_a"> Биржа</a>
+        <a href="top.html" class="header_nav_a">Топ</a>
+        <a href="../create/create.html" class="header_nav_a" id="create_offer"
+          >Создать</a
+        >
+        <a
+          href="../indexx/index.html"
+          class="header_nav_a displaynone"
+          id="glav"
+          >Главная</a
+        >
+      </div>
+      <button class="header_profile displayopen">
+        <div class="header_profile_ava"></div>
+        <div class="header_profile_conh1">
+          <div class="header_profile_conh1_h1">никнейм</div>
+          <div class="header_profile_conh1_p">0.00 руб</div>
+        </div>
+
+        <span class="material-symbols-outlined header_profile_ico">
+          arrow_drop_down
+        </span>
+
+        <div class="header_profile_block">
+          <div class="header_profile_block_con1">
+            <div class="header_profile_block_con1_ava"></div>
+            <div class="header_profile_block_con1_con11">
+              <div class="header_profile_block_con1_con11_name">никнейм</div>
+              <div class="header_profile_block_con1_con11_tg">
+                t.me/username
+              </div>
+            </div>
+          </div>
+          <div class="header_profile_block_con2">
+            <a
+              href="../profile/profile.html"
+              class="header_profile_block_con2_prof"
+            >
+              <i class="fas fa-user"></i> Мой профиль
+            </a>
+            <a href="" class="header_profile_block_con2_offers">
+              <i class="fas fa-tags"></i> Мои офферы
+            </a>
+            <a href="" class="header_profile_block_con2_newoffer">
+              <i class="fas fa-plus-circle"></i> Новый оффер
+            </a>
+            <a href="" class="header_profile_block_con2_sett">
+              <i class="fas fa-cog"></i> Настройки
+            </a>
+          </div>
+          <a href="" class="header_profile_block_butt">
+            <i class="fas fa-sign-out-alt out"></i> Выйти
+          </a>
+
+          <style>
+            .header_profile_block_con2 a,
+            .header_profile_block_butt,
+            .header_register button {
+              display: flex;
+              align-items: center;
+              gap: 5px;
+
+              i {
+                font-size: 15px;
+                width: 20px;
+                text-align: center;
+                color: rgb(197, 197, 197);
+              }
+              .out {
+                color: rgb(100, 49, 255);
+              }
+            }
+          </style>
+        </div>
+      </button>
+      <div class="header_register displaynone">
+        <button class="header_register_a_vh modal_vhrg">Войти</button>
+        <button class="header_register_a_rg modal_vhrg">Регистрация</button>
+      </div>
+    </header>
+    <style>
+      img {
+        margin-top: 100px;
+        width: 80%;
+        height: 600px;
+        border-radius: 50px;
+      }
+    </style>
+    <img src="../img/3.jpeg" alt="" />
+    <!-- модальный блок-окно регистрации -->
+    <div class="modal_con">
+      <div class="modal_block">
+        <div class="modal_con_h1rg">
+          <h1 class="modal_block_h1rg">Регистрация</h1>
+          <h1 class="modal_block_h1">x</h1>
+        </div>
+        <div class="modal_nick">
+          <h1 class="modal_nick_h1">Ваш никнейм</h1>
+          <input
+            class="modal_nick_input"
+            type="name"
+            placeholder="Введите никнейм"
+          />
+        </div>
+        <div class="modal_pass">
+          <h1 class="modal_pass_h1">Пароль</h1>
+          <input
+            class="modal_pass_input"
+            type="password"
+            placeholder="Введите пароль"
+          />
+        </div>
+        <div class="modal_2pass">
+          <h1 class="modal_2pass_h1">Подтвердите пароль</h1>
+          <input
+            class="modal_2pass_input"
+            type="password"
+            placeholder="Введите снова пароль"
+          />
+        </div>
+        <div class="modal_tg">
+          <div class="modal_tg_h1">Telegram для связи (обязательно)</div>
+          <div class="modal_tg_con">
+            <input
+              type="text"
+              class="modal_tg_con_input"
+              value="@"
+              placeholder="@nickname"
+            />
+            <div class="modal_tg_con_p">
+              Ссылка будет в вашем профиле. Можно изменить позже
+            </div>
+          </div>
+        </div>
+        <div class="modal_rg">
+          <button class="modal_rg_rg">Зарегистрироваться</button>
+          <button class="modal_rg_vh">Есть аккаунт?</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- модальное окно входа -->
+    <div class="modal_con_rg">
+      <div class="modal_con_rg_block">
+        <div class="modal_con_rg_block_conh1">
+          <h1 class="modal_con_rg_block_conh1_vh">Вход</h1>
+          <h1 class="modal_con_rg_block_conh1_x">x</h1>
+        </div>
+        <div class="modal_con_rg_block_nick">
+          <h1 class="modal_con_rg_block_nick_name">Ваш никнейм</h1>
+          <input
+            class="modal_con_rg_block_nick_inp"
+            type="name"
+            placeholder="Введите никнейм"
+          />
+        </div>
+        <div class="modal_con_rg_block_pass">
+          <h1 class="modal_con_rg_block_pass_pass">Пароль</h1>
+          <input
+            class="modal_con_rg_block_pass_inp"
+            type="password"
+            placeholder="Введите пароль"
+          />
+        </div>
+        <div class="modal_con_rg_block_vh">
+          <button class="modal_con_rg_block_vh_vhod">Вход</button>
+          <button class="modal_con_rg_block_vh_vv">Нету акканта?</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../header/header_js/header.js"></script>
+  </body>
+</html>

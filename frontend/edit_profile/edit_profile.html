@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Редактирования профиля</title>
+    <link rel="stylesheet" href="edit_profile.css" />
+    <link rel="stylesheet" href="../header/header_css/header.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:FILL@0..1"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header_logo"></div>
+      <div class="header_nav">
+        <a href="../market/market.html" class="header_nav_a"> Биржа</a>
+        <a href="../top/top.html" class="header_nav_a">Топ</a>
+        <a href="../create/create.html" class="header_nav_a" id="create_offer"
+          >Создать</a
+        >
+        <a
+          href="../indexx/index.html"
+          class="header_nav_a displaynone"
+          id="glav"
+          >Главная</a
+        >
+      </div>
+      <div class="header_balance">
+        <div class="balance_number">0.00р</div>
+        <div class="balance_ico">+</div>
+      </div>
+    </header>
+    <main class="grid">
+      <div class="main_avatars">
+        <div class="img">
+          <img src="../img/2.jpg" alt="Avatar" />
+          <span class="material-symbols-outlined filled"> add_a_photo </span>
+        </div>
+        <h1>admin</h1>
+        <p>ID 10000</p>
+      </div>
+      <div class="main_edit">
+        <h1>
+          <span class="material-symbols-outlined">artist</span>
+          Редактирования профиля
+        </h1>
+
+        <form action="">
+          <div>Никнейм</div>
+          <input type="text" placeholder="Ваш никнейм" />
+          <p>От 3 до 20 символов</p>
+        </form>
+
+        <form action="">
+          <div>Ссылка на telegram или @user</div>
+          <input type="text" placeholder="введите telegram" />
+          <p id="ppp">
+            Важно указывать действующий телеграм, для связи с вами!
+          </p>
+        </form>
+
+        <form action="">
+          <div>О себе</div>
+          <input type="text" placeholder="Описание вашего профиля" />
+          <p>Эта информация будет в вашем профиле</p>
+        </form>
+
+        <div class="button">
+          <a href="../profile/profile.html">
+            <button>Отмена</button>
+          </a>
+          <button id="butt">Сохранить</button>
+        </div>
+        <a href="#">Удалить аккаунт</a>
+      </div>
+    </main>
+    <script src="edit_profile.js"></script>
+    <script src="../header/header_js/"></script>
+  </body>
+</html>
